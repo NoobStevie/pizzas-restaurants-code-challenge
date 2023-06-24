@@ -13,8 +13,8 @@ class RestaurantPizzasController < ApplicationController
     end
 
     def create
-        restaurantpizza = RestaurantPizza.create(restaurant_pizza_params)
-        render.json: restaurants, status: :created
+        restaurantpizza = RestaurantPizza.create!(restaurant_pizza_params)
+        render.json: restaurantpizza, status: :created
     end
 
     private
