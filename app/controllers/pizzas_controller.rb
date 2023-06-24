@@ -6,7 +6,8 @@ rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_method
     # GET all
 
     def index
-        render json: Pizza.all, each_serializer: PizzaSerializer
+        pizza = Pizza.all
+        render json: pizza, each_serializer: PizzaSerializer
     end
 
     def show
@@ -17,6 +18,6 @@ rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_method
     private
 
     def record_not_found
-        render json:(error: "Pizzan not found"), status: :not_found
+        render json:(error: "Pizza not found"), status: :not_found
     end
 end
