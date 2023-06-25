@@ -16,6 +16,7 @@ gem "puma", "~> 5.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+gem "active_model_serializers"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
