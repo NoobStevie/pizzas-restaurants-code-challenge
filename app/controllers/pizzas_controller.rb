@@ -1,7 +1,8 @@
 class PizzasController < ApplicationController
 
-rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_method
+    rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+    rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_method
+    skip_before_action :verify_authenticity_token
 
     # GET all
 
