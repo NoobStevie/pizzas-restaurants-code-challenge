@@ -2,13 +2,6 @@ class RestaurantPizza < ApplicationRecord
     belongs_to :pizza
     belongs_to :restaurant
 
-    validates :price, presence: true
+    validates :price, presence: true, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 30 }
 
-    validate :price_range
-
-    def price_range
-        if (price > 30 || price < 1)
-            errors.add(:price, 'Must be between 30 and 1')
-        end
-    end
 end
